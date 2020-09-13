@@ -1,0 +1,29 @@
+#!/usr/bin/env ruby
+
+# find all divisors for a given number
+# usage example:
+# divisors 2 3 4
+
+ARGV.each do |n|
+
+print "(" + n + ") " # show input at the start of line
+#puts n.class, n is string here
+n = n.to_i
+#puts n.class, n should be integer here
+x = [] # array
+
+    (1..n/2).each do |l| # brute force divison to half of the number
+
+        x << l if n.to_f % l == 0
+
+    end
+
+    # just add the number itself to the array
+    x << n
+
+    # results
+    print x
+    print " prime" if x.length == 2
+    print "\n" # new line
+
+end
