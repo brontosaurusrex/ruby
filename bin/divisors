@@ -6,12 +6,12 @@
 
 ARGV.each do |n|
 
-print "(" + n + ") " # show input at the start of line
-#puts n.class, n is string here
-n = n.to_i
-#puts n.class, n should be integer here
-x = [] # array
+    n = n.to_i
+    print n.to_s + " " # show input at the start of line
 
+    x = [] # array
+
+    # loopines
     (1..n/2).each do |l| # brute force divison to half of the number
 
         x << l if n.to_f % l == 0
@@ -23,7 +23,11 @@ x = [] # array
 
     # results
     print x
-    print " prime" if x.length == 2
+    if x.length == 2
+        print " prime"
+    else
+        print " " + x.length.to_s
+    end
     print "\n" # new line
 
 end
